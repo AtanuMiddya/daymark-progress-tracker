@@ -1,0 +1,14 @@
+{
+  "name": "Daymark — Daily Progress Tracker",
+  "short_name": "Daymark",
+  "description": "A thoughtful daily, weekly and 365-day progress tracker.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f7f8",
+  "theme_color": "#101b2c",
+  "icons": [
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
+
