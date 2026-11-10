@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101b2c" />
+    <meta name="description" content="A thoughtful daily, weekly and 365-day progress tracker." />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Daymark — make today count</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#today" aria-label="Daymark home">
+          <span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 5.5h18a2.5 2.5 0 0 1 2.5 2.5v16a2.5 2.5 0 0 1-2.5 2.5H7A2.5 2.5 0 0 1 4.5 24V8A2.5 2.5 0 0 1 7 5.5Z"/><path d="m10 16 4 4 8-9"/></svg></span>
+          <span class="brand-copy"><strong>daymark</strong><small>THE EVERYDAY BETTER</small></span>
+        </a>
+        <div class="side-label">YOUR SPACE</div>
+        <nav class="primary-nav">
+          <button class="nav-link is-active" data-view="today"><span class="nav-icon">◷</span><span>Today</span><span class="nav-current" id="today-nav-date"></span></button>
+          <button class="nav-link" data-view="week"><span class="nav-icon">▦</span><span>This week</span></button>
+          <button class="nav-link" data-view="year"><span class="nav-icon">▤</span><span>365 days</span></button>
+        </nav>
+        <div class="sidebar-spacer"></div>
+        <div class="sidebar-note">
+          <span class="note-spark">✳</span>
+          <p>Progress is built<br />one day at a time.</p>
+          <span class="note-line"></span>
+          <small>SHOW UP FOR YOURSELF</small>
+        </div>
+        <div class="sidebar-footer"><span class="save-dot"></span><span>Saved on this device</span></div>
+      </aside>
+
+      <div class="main-column">
+        <header class="topbar">
+          <div class="topbar-breadcrumb"><span class="breadcrumb-kicker">YOUR PROGRESS</span><span class="breadcrumb-slash">/</span><span id="breadcrumb-view">Today</span></div>
+          <div class="topbar-actions">
+            <button class="icon-button" id="install-button" title="Install Daymark" aria-label="Install Daymark" hidden><span>↓</span></button>
+            <button class="text-button" id="export-button"><span class="button-icon">↗</span> Export data</button>
+            <button class="avatar" aria-label="Your account">Y</button>
+          </div>
+        </header>
+        <main id="main-content" class="main-content" tabindex="-1"></main>
+        <footer class="page-footer"><span>DAYMARK</span><span>Small steps. Stronger days.</span><span id="footer-year"></span></footer>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <button class="mobile-nav-link is-active" data-view="today"><span>◷</span><small>Today</small></button>
+      <button class="mobile-nav-link" data-view="week"><span>▦</span><small>Week</small></button>
+      <button class="mobile-nav-link" data-view="year"><span>▤</span><small>365 days</small></button>
+    </nav>
+    <input type="file" id="attachment-picker" accept="image/*,.pdf,.txt,.doc,.docx" multiple hidden />
+    <input type="file" id="import-picker" accept="application/json,.json" hidden />
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js" defer></script>
+  </body>
+</html>
+
